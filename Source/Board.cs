@@ -74,7 +74,7 @@ namespace Source
                 if (board[rows - 1, col].getLetter() != '.')
                     board[rows - 1, col].isFalling = false;
             }
-                for (int row = rows - 2; row >= 0; row--)
+            for (int row = rows - 2; row >= 0; row--)
             {
                 for (int col = 0; col < columns; col++)
                 {
