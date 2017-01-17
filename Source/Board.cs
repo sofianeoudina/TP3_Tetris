@@ -64,12 +64,14 @@ namespace Source
 
         public void Tick()
         {
-            for (int row = rows - 2; row > 0; row--)
+            for (int row = rows - 2; row >= 0; row--)
             {
                 for (int col = 0; col < columns; col++)
                 {
                     if(board[row, col].getLetter() != '.' && board[row + 1, col].getLetter() == '.'){
-                                            
+                        Block tmp = board[row, col];
+                        board[row, col] = board[row + 1, col];
+                        board[row + 1, col] = tmp;
                     }
                 }
             }
