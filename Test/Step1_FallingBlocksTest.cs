@@ -109,36 +109,36 @@ namespace Test
 
         #region when_a_block_reaches_the_bottom
 
-        //void FallToLastRow()
-        //{
-        //    DropBlock('X');
-        //    board.Tick();
-        //    board.Tick();
-        //}
+        void FallToLastRow()
+        {
+            DropBlock('X');
+            board.Tick();
+            board.Tick();
+        }
 
-        //[TestMethod]
-        //public void block_moves_to_the_last_row()
-        //{
-        //    // act
-        //    FallToLastRow();
+        [TestMethod]
+        public void block_moves_to_the_last_row()
+        {
+            // act
+            FallToLastRow();
 
-        //    // assert
-        //    Assert.AreEqual(board.ToString(),
-        //        "...\n" +
-        //        "...\n" +
-        //        ".X.\n"
-        //    );
-        //}
+            // assert
+            Assert.AreEqual(board.ToString(),
+                "...\n" +
+                "...\n" +
+                ".X.\n"
+            );
+        }
 
-        //[TestMethod]
-        //public void block_is_still_falling_on_the_last_row()
-        //{
-        //    // act
-        //    FallToLastRow();
+        [TestMethod]
+        public void block_is_still_falling_on_the_last_row()
+        {
+            // act
+            FallToLastRow();
 
-        //    // assert
-        //    Assert.IsTrue(board.IsFallingBlock());
-        //}
+            // assert
+            Assert.IsTrue(board.IsFallingBlock());
+        }
 
         //[TestMethod]
         //public void block_stops_moving_when_it_hits_the_bottom()

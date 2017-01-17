@@ -49,9 +49,12 @@ namespace Source
         public bool IsFallingBlock()
         {
             bool toReturn = false;
-            for (int i = 0; i < columns; i++)
+            for (int row = 0; row < rows; row++)
             {
-                if (board[0, i].getLetter() != '.') toReturn = true;
+                for (int i = 0; i < columns; i++)
+                {
+                    if (board[row, i].getLetter() != '.') toReturn = true;
+                }
             }
             return toReturn;
         }
