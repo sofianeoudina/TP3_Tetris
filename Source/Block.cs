@@ -9,10 +9,12 @@ namespace Source
     public class Block
     {
         public char letter;
+        public bool isFalling;
 
         public Block(char letter)
         {
             this.letter = letter;
+            isFalling = true;
         }
 
         public char getLetter()
