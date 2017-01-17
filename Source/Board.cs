@@ -59,7 +59,10 @@ namespace Source
         public void Drop(Block newBlock)
         {
             int center = columns / 2;
-            board[0, center] = newBlock;
+            if (board[0, center].getLetter() != '.')
+                throw new System.ArgumentException("A block is already falling.");
+            else
+                board[0, center] = newBlock;
         }
 
         public void Tick()

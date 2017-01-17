@@ -87,23 +87,23 @@ namespace Test
             );
         }
 
-        //[TestMethod]
-        //[ExpectedException(typeof(ArgumentException), "A block is already falling.")]
-        //public void at_most_one_block_may_be_falling_at_a_time()
-        //{
-        //    // arrange
-        //    DropBlock('X');
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "A block is already falling.")]
+        public void at_most_one_block_may_be_falling_at_a_time()
+        {
+            // arrange
+            DropBlock('X');
 
-        //    // act
-        //    DropBlock('Y');
+            // act
+            DropBlock('Y');
 
-        //    // assert
-        //    Assert.AreEqual(board.ToString(),
-        //        ".X.\n" +
-        //        "...\n" +
-        //        "...\n"
-        //    );
-        //}
+            // assert
+            Assert.AreEqual(board.ToString(),
+                ".X.\n" +
+                "...\n" +
+                "...\n"
+            );
+        }
 
         #endregion
 
