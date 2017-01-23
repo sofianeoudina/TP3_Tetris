@@ -20,6 +20,16 @@ namespace Test
                 {'.','.','.'}
             });
         }
+
+        [TestMethod]
+        public void test_tostring()
+        {
+            string grid = "...\n...\n...\n";
+
+            Piece converter = new Piece(grid);
+
+            Assert.AreEqual(converter.ToString(), grid);
+        }
         //[TestMethod]
         //public void string_to_matrix()
         //{

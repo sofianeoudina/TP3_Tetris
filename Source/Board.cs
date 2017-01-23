@@ -10,7 +10,7 @@ namespace Source
     {
         readonly int rows;
         readonly int columns;
-        public Block[,] board;
+        public MovableGrid[,] board;
 
         public Board(int rows, int columns)
         {
@@ -22,12 +22,12 @@ namespace Source
 
         private void init()
         {
-            board = new Block[rows, columns];
+            board = new MovableGrid[rows, columns];
             for (int row = 0; row < rows; row++)
             {
                 for (int col = 0; col < columns; col++)
                 {
-                    board[row, col] = new Block('.');
+                    board[row, col] = new MovableGrid('.');
                 }
             }
         }
@@ -58,8 +58,9 @@ namespace Source
             return false;
         }
 
-        public void Drop(Block newBlock)
+        public void Drop(Grid Shape)
         {
+            MovableGrid newBlock = new MovableGrid(Shape);
             int center = columns / 2;
             if (board[0, center].getLetter() != '.')
                 throw new System.ArgumentException("A block is already falling.");
@@ -79,7 +80,7 @@ namespace Source
                 for (int col = 0; col < columns; col++)
                 {
                     if(board[row, col].getLetter() != '.' && board[row + 1, col].getLetter() == '.'){
-                        Block tmp = board[row, col];
+                        MovableGrid tmp = board[row, col];
                         board[row, col] = board[row + 1, col];
                         board[row + 1, col] = tmp;
                         board[row, col].isFalling = true;

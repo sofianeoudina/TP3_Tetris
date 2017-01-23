@@ -28,17 +28,17 @@ namespace Source
         }
         public char CellAt(int row, int col)
         {
-            throw new NotImplementedException();
+            return blocks[row, col];
         }
 
         public int Columns()
         {
-            throw new NotImplementedException();
+            return columns;
         }
 
         public int Rows()
         {
-            throw new NotImplementedException();
+            return rows;
         }
 
         public override string ToString()

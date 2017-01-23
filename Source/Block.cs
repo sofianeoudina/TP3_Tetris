@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 
 namespace Source
 {
-    public class Block
+    public class MovableGrid : Grid
     {
         public char letter;
         public bool isFalling;
 
-        public Block(char letter)
+        public MovableGrid(char letter)
         {
             this.letter = letter;
+            isFalling = true;
+        }
+
+        public MovableGrid(Grid shape)
+        {
+            this.letter = shape.CellAt(0, 0);
             isFalling = true;
         }
 
@@ -25,6 +31,21 @@ namespace Source
         public override string ToString()
         {
             return letter.ToString();
+        }
+
+        public int Rows()
+        {
+            return 1;
+        }
+
+        public int Columns()
+        {
+            return 1;
+        }
+
+        public char CellAt(int row, int col)
+        {
+            return letter;
         }
     }
 }
