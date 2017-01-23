@@ -8,10 +8,23 @@ namespace Source
 {
     public class Piece : Grid
     {
-        public String[,] matrice;
+        private int rows, columns;
+        public char[,] blocks;
         public Piece(String s)
         {
-
+            Char delimiter = '\n';
+            String[] substrings = s.Split(delimiter);
+            rows = substrings.Length - 1;
+            columns = substrings[0].Length;
+            blocks = new char[rows, columns];
+            for(int i = 0; i < rows; i++)
+            {
+                for(int j = 0; j < columns; j++)
+                {
+                    String tmp = substrings[i];
+                    blocks[i, j] = tmp[j];
+                }     
+            }
         }
         public char CellAt(int row, int col)
         {
@@ -26,6 +39,20 @@ namespace Source
         public int Rows()
         {
             throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            String toReturn = "";
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    toReturn += blocks[i, j];
+                }
+                toReturn += "\n";
+            }
+            return toReturn;
         }
     }
 }
